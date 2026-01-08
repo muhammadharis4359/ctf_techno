@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - StoreX</title>
+</head>
+<body>
+    <h2>Welcome, {{ user }}!</h2>
+    <h3>Products</h3>
+    <ul>
+        <li><a href="/product?id=1">Product 1</a></li>
+        <li><a href="/product?id=2">Product 2</a></li>
+    </ul>
+
+    <h3>File Upload</h3>
+    <p><a href="/upload">Go to upload</a></p>
+
+    <h3>Change Password (CSRF Vulnerability)</h3>
+    <form action="/change-password" method="POST">
+        New password for admin: <input type="text" name="new_password" required>
+        <button type="submit">Change Password</button>
+    </form>
+
+    <h3>OTP</h3>
+    <form action="/otp" method="POST">
+        OTP: <input type="text" name="otp" required>
+        <button type="submit">Submit OTP</button>
+    </form>
+
+    <p><a href="/logout">Logout</a></p>
+</body>
+</html>
